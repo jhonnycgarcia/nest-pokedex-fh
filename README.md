@@ -32,6 +32,20 @@ http://localhost:3000/api/v2/seed
 - Nest
 - https://gist.github.com/Klerith/e7861738c93712840ab3a38674843490
 
+## Build
+```
+docker compose -f docker-compose.prod.yaml --env-file .env.prod up --build -d
+```
+
+## Run
+docker compose -f docker-compose.prod.yaml --env-file .env.prod up -d
+
+## Nota
+Por defecto, __docker-compose__ usa el archivo ```.env```, por lo que si tienen el archivo .env y lo configuran con sus variables de entorno de producción, bastaría con
+```
+docker compose -f docker-compose.prod.yaml up --build
+```
+
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
