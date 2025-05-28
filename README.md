@@ -30,6 +30,7 @@ http://localhost:3000/api/v2/seed
 ## Stack utilizado
 - MongoDB
 - Nest
+- https://gist.github.com/Klerith/e7861738c93712840ab3a38674843490
 
 ## License
 

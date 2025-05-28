@@ -1,0 +1,17 @@
+# Compiled output
+dist/
+
+# Dependencies
+node_modules/
+
+# Git files
+.gitignore
+.git/
+
+# Environment files
+# .env
+# .env.template
+# .env.local
+# .env.development.local
+# .env.test.local
+# .env.production.local
