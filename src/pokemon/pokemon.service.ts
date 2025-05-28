@@ -56,8 +56,19 @@ export class PokemonService {
     return pokemon;
   }
 
-  update(id: number, updatePokemonDto: UpdatePokemonDto) {
-    return `This action updates a #${id} pokemon`;
+  async update(id: string, updatePokemonDto: UpdatePokemonDto) {
+    const pokemon = await this.findOne(id);
+
+    if (updatePokemonDto.name) {
+      updatePokemonDto.name = updatePokemonDto.name.toLowerCase().trim();
+    }
+
+    try {
+      await pokemon.updateOne(updatePokemonDto);
+      return { ...pokemon.toJSON(), ...updatePokemonDto };
+    } catch (error) {
+      throw new InternalServerErrorException(`Can't update Pokemon - Check server logs`);
+    }
   }
 
   remove(id: number) {
