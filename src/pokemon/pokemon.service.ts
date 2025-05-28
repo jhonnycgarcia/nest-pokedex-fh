@@ -26,8 +26,12 @@ export class PokemonService {
     }
   }
 
-  findAll(paginationDto: PaginationDto) {
-    return this.pokemonModel.find();
+  findAll({ limit = 10, offset = 0 }: PaginationDto) {
+    return this.pokemonModel.find()
+      .limit(limit)
+      .skip(offset)
+      .sort({ no: 1 })
+      .select('-__v');
   }
 
   async findOne(term: string) {
