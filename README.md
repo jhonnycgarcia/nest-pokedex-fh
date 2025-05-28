@@ -46,6 +46,14 @@ Por defecto, __docker-compose__ usa el archivo ```.env```, por lo que si tienen 
 docker compose -f docker-compose.prod.yaml up --build
 ```
 
+## Build para produccion
+1. Crear el archivo `.env.prod`
+2. Llenar las variables de entorno de prod
+3. Crear la nueva imagen
+```
+docker compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
+
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
